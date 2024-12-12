@@ -14,6 +14,15 @@ const App = () => {
   const cameraRef = useRef(null);
   const device = useCameraDevice('back');
 
+  const overlayImages = {
+    leftSpiral: require('./assets/spiral1.png'),
+    rightSpiral: require('./assets/spiral2.png'),
+    ruleOfThirds: require('./assets/ruleofthirds.png'),
+    // topSpiral: require('./assets/spiral3.png'),
+    // bottomSpiral: require('./assets/spiral4.png'),
+    // centerCircle: require('./assets/center_circle.png'),
+    // goldenRatio: require('./assets/golden_ratio.png'),
+  };
   const toggleOverlay = (overlay) => {
     setActiveOverlays((prev) => {
       if (prev.includes(overlay)) {
@@ -26,10 +35,12 @@ const App = () => {
 
   const renderOverlays = () => {
     return activeOverlays.map((overlay, index) => {
-      const overlaySource =
-        overlay === 'leftSpiral'
-          ? require('./assets/spiral1.png')
-          : require('./assets/spiral2.png');
+      const overlaySource = overlayImages[overlay];
+
+      if (!overlaySource) {
+        console.warn(`No image found for overlay: ${overlay}`);
+        return null;
+      }
 
       return (
         <Image
@@ -112,6 +123,11 @@ const App = () => {
   const overlays = [
     { id: 'leftSpiral', label: 'Left Spiral' },
     { id: 'rightSpiral', label: 'Right Spiral' },
+    { id: 'ruleOfThirds', label: 'Rule of Thirds'},
+    // { id: 'topSpiral', label: 'Top Spiral' },
+    // { id: 'bottomSpiral', label: 'Bottom Spiral' },
+    // { id: 'centerCircle', label: 'Center Circle' },
+    // { id: 'goldenRatio', label: 'Golden Ratio' },
   ];
 
   return (
