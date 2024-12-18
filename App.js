@@ -15,13 +15,14 @@ const App = () => {
   const device = useCameraDevice('back');
 
   const overlayImages = {
-    leftSpiral: require('./assets/spiral1.png'),
-    rightSpiral: require('./assets/spiral2.png'),
-    ruleOfThirds: require('./assets/ruleofthirds.png'),
-    // topSpiral: require('./assets/spiral3.png'),
-    // bottomSpiral: require('./assets/spiral4.png'),
-    // centerCircle: require('./assets/center_circle.png'),
-    // goldenRatio: require('./assets/golden_ratio.png'),
+    leftTopSpiral: require('./assets/Overlay/Landscape/GoldS-LT-L.png'),
+    rightTopSpiral: require('./assets/Overlay/Landscape/GoldS-RT-L.png'),
+    ruleOfThirds: require('./assets/Overlay/Landscape/ROT-L.png'),
+    leftBottomSpiral: require('./assets/Overlay/Landscape/GoldS-LB-L.png'), 
+    rightBottomSpiral: require('./assets/Overlay/Landscape/GoldS-RB-L.png'), 
+    leftTopTriangle:require('./assets/Overlay/Landscape/GoldT-LT-L.png'), 
+    rightTopTriangle: require('./assets/Overlay/Landscape/GoldT-RT-L.png'), 
+    goldenRatio: require('./assets/Overlay/Landscape/GoldR-L.png'), 
   };
   const toggleOverlay = (overlay) => {
     setActiveOverlays((prev) => {
@@ -121,13 +122,14 @@ const App = () => {
   if (!device) return <Text>Loading Camera...</Text>;
 
   const overlays = [
-    { id: 'leftSpiral', label: 'Left Spiral' },
-    { id: 'rightSpiral', label: 'Right Spiral' },
     { id: 'ruleOfThirds', label: 'Rule of Thirds'},
-    // { id: 'topSpiral', label: 'Top Spiral' },
-    // { id: 'bottomSpiral', label: 'Bottom Spiral' },
-    // { id: 'centerCircle', label: 'Center Circle' },
-    // { id: 'goldenRatio', label: 'Golden Ratio' },
+    { id: 'goldenRatio', label: 'Golden ratio'},
+    { id: 'leftTopSpiral', label: 'Left Top Spiral' },
+    { id: 'rightTopSpiral', label: 'Right Top Spiral' },
+    { id: 'leftBottomSpiral', label: 'Left Bottom Spiral'},
+    { id: 'rightBottomSpiral', label: 'Right bottom Spiral'},
+    { id: 'leftTopTriangle', label: 'Left Golden Triangle'},
+    { id: 'rightTopTriangle', label: 'Right Golden Triangle'},
   ];
 
   return (
