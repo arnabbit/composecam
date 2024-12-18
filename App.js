@@ -23,6 +23,9 @@ const App = () => {
     leftTopTriangle:require('./assets/Overlay/Landscape/GoldT-LT-L.png'), 
     rightTopTriangle: require('./assets/Overlay/Landscape/GoldT-RT-L.png'), 
     goldenRatio: require('./assets/Overlay/Landscape/GoldR-L.png'), 
+    goldenRectHori: require('./assets/Overlay/Landscape/Rect-Horizontal.png'), 
+    goldenRectVert: require('./assets/Overlay/Landscape/Rect-Vertical.png'), 
+    diagCenter: require('./assets/Overlay/Landscape/DiagCenter.png'), 
   };
   const toggleOverlay = (overlay) => {
     setActiveOverlays((prev) => {
@@ -124,6 +127,9 @@ const App = () => {
   const overlays = [
     { id: 'ruleOfThirds', label: 'Rule of Thirds'},
     { id: 'goldenRatio', label: 'Golden ratio'},
+    { id: 'goldenRectHori', label: 'Rectangle Hori'},
+    { id: 'goldenRectVert', label: 'Reactangle Vert'},
+    { id: 'diagCenter', label: 'Diagonal Center'},
     { id: 'leftTopSpiral', label: 'Left Top Spiral' },
     { id: 'rightTopSpiral', label: 'Right Top Spiral' },
     { id: 'leftBottomSpiral', label: 'Left Bottom Spiral'},
